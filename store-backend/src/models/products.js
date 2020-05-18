@@ -5,6 +5,27 @@ let products = [
         title: 'GPU',
         description: 'dfssdfsdf',
         price: '16$'
+    },
+    {
+        id: 0,
+        author: 'Edgar',
+        title: 'GPU',
+        description: 'dfssdfsdf',
+        price: '16$'
+    },
+    {
+        id: 0,
+        author: 'Edgar',
+        title: 'GPU',
+        description: 'dfssdfsdf',
+        price: '16$'
+    },
+    {
+        id: 0,
+        author: 'Edgar',
+        title: 'GPU',
+        description: 'dfssdfsdf',
+        price: '16$'
     }
 ]
 

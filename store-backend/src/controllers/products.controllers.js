@@ -15,23 +15,23 @@ productsCtrl.createProducts = (req, res) => {
         description,
         price
     });
-    res.json('save product');
+    res.json(req.body);
 }
 
 productsCtrl.getProduct = (req, res) => {
-    const { id } = req.params.id;
+    const { id } = req.params;
     for(i in products){
-        if(id == products[i].id){
+        if(products[i].id == id){
             res.json(products[i]);
         }
     }
 }
 
 productsCtrl.updateProducts = (req, res) => {
-    const { id } = req.params.id
+    const { id } = req.params;
     const { author, title, description, price } = req.body;
     for(i in products){
-        if(id == products[i].id){
+        if(products[i].id == id){
             products[i].author = author;
             products[i].title = title;
             products[i].description = description;
@@ -42,9 +42,9 @@ productsCtrl.updateProducts = (req, res) => {
 }
 
 productsCtrl.deleteProducts = (req, res) => {
-    const { id } = req.params.id;
+    const { id } = req.params;
     for(i in products){
-        if(id == products[i].id){
+        if(products[i].id == id){
             products.splice(i, 1);
         }
     }
