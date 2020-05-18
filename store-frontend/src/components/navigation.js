@@ -4,7 +4,7 @@ const Navigation = () => {
     return (
         <nav className="navbar navbar-expand navbar-light bg-light">
             <a className="navbar-brand" href="/">Store</a>
-            <div className="navbar-nav">
+            <div className="navbar-nav ml-auto">
                 <a className="nav-item nav-link" href="/create">Create Product</a>
                 <a className="nav-item nav-link" href="/products">Products</a>
             </div>

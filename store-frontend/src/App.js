@@ -16,12 +16,25 @@ class App extends React.Component {
   }
 
   async componentDidMount(){
+    this.showProducts();
+  }
+
+  showProducts = async () => {
     let res = await fetch('http://localhost:4000/api/products')
-    let products = await  res.json();
+    let products = await res.json();
     
     this.setState({
       data: products
     });
+  }
+
+  deleteProduct = async  id => {
+    await fetch('http://localhost:4000/api/products/' + id, {
+      method: 'DELETE',
+    })
+    .then(res => res.json())
+    .then(res => console.log(res))
+    this.showProducts()
   }
 
   render(){
@@ -33,9 +46,13 @@ class App extends React.Component {
             return (
               <div>
                 <Banner/>
-                <div className="row mt-2">
+                <div className="row mt-2 mr-2 ml-2">
                   {this.state.data.map((product, i)=>(
-                    <AllProducts product={product} key={i}/>
+                    <AllProducts 
+                      product={product} 
+                      key={this.state.data[i].id}
+                      deleteProduct={() => this.deleteProduct(this.state.data[i].id)} 
+                    />
                   ))}
                 </div>
               </div>

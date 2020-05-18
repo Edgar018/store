@@ -1,6 +1,6 @@
 import React from "react";
 
-const AllProducts = ({product}) => {
+const AllProducts = ({product, deleteProduct}) => {
   return (
       <div className="col-4">
         <div className="card card-body mt-5">
@@ -8,6 +8,7 @@ const AllProducts = ({product}) => {
             <p>{product.author}</p>
             <p>{product.description}</p>
             <p>{product.price}</p>
+            <button className="btn btn-danger" onClick={deleteProduct}>delete</button>
         </div>
       </div>
   );

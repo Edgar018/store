@@ -7,21 +7,21 @@ let products = [
         price: '16$'
     },
     {
-        id: 0,
+        id: 1,
         author: 'Edgar',
         title: 'GPU',
         description: 'dfssdfsdf',
         price: '16$'
     },
     {
-        id: 0,
+        id: 2,
         author: 'Edgar',
         title: 'GPU',
         description: 'dfssdfsdf',
         price: '16$'
     },
     {
-        id: 0,
+        id: 3,
         author: 'Edgar',
         title: 'GPU',
         description: 'dfssdfsdf',

@@ -2,12 +2,13 @@ import React from 'react';
 
 const ProductForm = () => {
 
-    const createProduct = e => {
+
+    const createProduct = async e => {
         e.preventDefault();
         let form = document.getElementById('form')
         let data = new FormData(form);
 
-        fetch('http://localhost:4000/api/products', {
+        await fetch('http://localhost:4000/api/products', {
             method: 'POST',
             headers: {
                 'Accept': 'aplication/json',
