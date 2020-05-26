@@ -1,73 +1,11 @@
 {
   "products": [
     {
-      "id": "51f03d76-8cc9-4b14-84e6-4ac33ba38fa7",
-      "name": "dsad",
-      "title": "sadasd",
-      "description": "dasdas",
-      "price": "1754$"
-    },
-    {
-      "id": "247aec4a-0866-4565-93af-17c93bc157ed",
-      "name": "dsad",
-      "title": "sadasd",
-      "description": "dasdas",
-      "price": "1754$"
-    },
-    {
-      "id": "fd4a9e62-ad26-43c0-8048-eeb5801818a1",
-      "name": "dsad",
-      "title": "sadasd",
-      "description": "dasdas",
-      "price": "1754$"
-    },
-    {
-      "id": "b6e4daeb-5c32-4b92-8491-736d89db6a30",
-      "name": "dsad",
-      "title": "sadasd",
-      "description": "dasdas",
-      "price": "1754$"
-    },
-    {
-      "id": "bea72baf-8808-43ae-835d-494d96f13bf5",
-      "name": "dsadas",
-      "title": "dasdas",
+      "id": "280ec2cb-edbb-474a-9d4a-17e6cc0f4a09",
+      "name": "sadas",
+      "title": "dasdsa",
       "description": "dasda",
       "price": "1754$"
-    },
-    {
-      "id": "4110b3a1-1b27-4159-bd96-e6c5415a93df",
-      "title": "dasdas",
-      "description": "dasdas",
-      "price": "1754$"
-    },
-    {
-      "id": "2bda4341-f77c-4d70-8065-0cf9aeb7e401",
-      "name": "dsadas",
-      "title": "dsadas",
-      "description": "dsadas",
-      "price": "1754$"
-    },
-    {
-      "id": "a05b4e61-62b5-4fc1-a049-7196186b83c3",
-      "name": "Edgar",
-      "title": "PC",
-      "description": "una pc",
-      "price": "1000$"
-    },
-    {
-      "id": "2dfe217f-6166-49d2-84cc-3b0844cb846c",
-      "name": "Edgar",
-      "title": "GPU",
-      "description": "una gpu",
-      "price": "100$"
-    },
-    {
-      "id": "a0b9af54-21b6-4bf2-bf04-c1554b1fb986",
-      "name": "jaja",
-      "title": "genesisi duerme",
-      "description": "duerme mucho",
-      "price": "1$"
     }
   ],
   "users": [
@@ -75,54 +13,6 @@
       "id": "0",
       "email": "Edgar@hotmail.com",
       "username": "Edgar",
-      "password": "password"
-    },
-    {
-      "id": "3153e2c3-3779-4db1-b69a-9395f0e57df9",
-      "username": "Edgar",
-      "email": "Edgar12@hotmail.com",
-      "password": "passsword"
-    },
-    {
-      "id": "6426098c-be63-4c42-8ae5-8e88cd427a89",
-      "username": "Edgar",
-      "email": "Edgar123@hotmail.com",
-      "password": "password"
-    },
-    {
-      "id": "db2a8ec6-1b38-433b-92eb-27ed79ba06b2",
-      "username": "Edgar",
-      "email": "Edgar1233@hotmail.com",
-      "password": "password"
-    },
-    {
-      "id": "dcefbcbd-77f8-4c30-995a-d01ae7a124f5",
-      "username": "Edgar",
-      "email": "Edgar122121@hotmail.com",
-      "password": "password"
-    },
-    {
-      "id": "f6d22554-66e6-42ad-a266-37d059ad2636",
-      "username": "dsadas",
-      "email": "dsadas",
-      "password": "dsadas"
-    },
-    {
-      "id": "a7b3fbce-fea2-4306-8650-52a95c4a6daa",
-      "username": "Edgar",
-      "email": "Edgar12333@hotmail.com",
-      "password": "password"
-    },
-    {
-      "id": "5d47e644-9f4c-4c92-984c-c81d8c1236b0",
-      "username": "Edgar",
-      "email": "Edgar123333@hotmail.com",
-      "password": "password"
-    },
-    {
-      "id": "149f4f81-f700-4fc2-bbc0-81c96123dbab",
-      "username": "Edgar",
-      "email": "Edgar1233333@hotmail.com",
       "password": "password"
     }
   ]
