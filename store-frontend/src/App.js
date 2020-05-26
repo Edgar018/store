@@ -1,80 +1,91 @@
-import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import React, { Fragment, useState, useEffect } from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 //Components
-import Navigation from './components/navigation';
-import Banner from './components/banner';
-import ProductForm from './components/productForm';
-import AllProducts from './components/allProducts';
+import Navigation from "./components/navigation";
+import Banner from "./components/banner";
+import ProductForm from "./components/productForm";
+import AllProducts from "./components/allProducts";
+import FormSignup from "./components/formSignup";
+import FormSignin from "./components/formSignin";
+import Profile from "./components/profile";
+import Product from "./components/product";
 
-class App extends React.Component {
+const App = () => {
+  const [data, setData] = useState([]);
 
-  constructor(){
-    super();
-    this.state = {
-      data: []
-    }
-  }
+  useEffect(() => {
+    showProducts();
+  }, []);
 
-  async componentDidMount(){
-    this.showProducts();
-  }
-
-  showProducts = async () => {
-    let res = await fetch('http://localhost:4000/api/products')
+  const showProducts = async () => {
+    let res = await fetch("http://localhost:4000/api/products");
     let products = await res.json();
-    
-    this.setState({
-      data: products
-    });
-  }
+    setData(products);
+  };
 
-  deleteProduct = async  id => {
-    await fetch('http://localhost:4000/api/products/' + id, {
-      method: 'DELETE',
-    })
-    .then(res => res.json())
-    .then(res => console.log(res))
-    this.showProducts()
-  }
-
-  render(){
-    return (
-      <div>
-        <Navigation/>
-        <Router>
-          <Route exact path="/" render={() => {
+  const validation = () => {
+    if (
+      localStorage.getItem("token") !== null &&
+      localStorage.getItem("token") !== "undefined"
+    ) {
+      return true;
+    }
+    return false;
+  };
+  return (
+    <div>
+      <Router>
+        <Navigation validation={validation} />
+        <Route
+          exact
+          path="/"
+          render={() => {
             return (
-              <div>
-                <Banner/>
-                <div className="row mt-2 mr-2 ml-2">
-                  {this.state.data.map((product, i)=>(
-                    <AllProducts 
-                      product={product} 
-                      key={this.state.data[i].id}
-                      deleteProduct={() => this.deleteProduct(this.state.data[i].id)} 
-                    />
-                  ))}
-                </div>
-              </div>
-            )
-          }}
-          />      
-        <Route exact path="/create" render={() => {
-            return (
-              <div className="container col-5">
-                 <ProductForm/>
-              </div>
+              <Fragment>
+                <Banner />
+                <AllProducts data={data} />
+              </Fragment>
             );
           }}
-          />   
-          <Route exact path="/products" render={() => {
-            return <h1>product</h1>
+        />
+        <Route
+          exact
+          path="/create"
+          render={() => {
+            return <ProductForm validation={validation} />;
           }}
-          />    
-        </Router>
-      </div>  
-    );
-  }
-}
+        />
+        <Route
+          exact
+          path="/signin"
+          render={() => {
+            return <FormSignin validation={validation} />;
+          }}
+        />
+        <Route
+          exact
+          path="/signup"
+          render={() => {
+            return <FormSignup validation={validation} />;
+          }}
+        />
+        <Route
+          exact
+          path="/profile"
+          render={() => {
+            return <Profile validation={validation} />;
+          }}
+        />
+        <Route
+          exact
+          path={"/product/:id"}
+          render={() => {
+            return <Product />;
+          }}
+        />
+      </Router>
+    </div>
+  );
+};
 
 export default App;

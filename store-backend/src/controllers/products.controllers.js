@@ -1,54 +1,45 @@
 const productsCtrl = {}
 
-const products = require('../models/products');
+const { v4 } = require('uuid');
+const { getConnection } = require('../database');
 
 productsCtrl.getProducts = (req, res) => {
-    res.json(products)
+    const products = getConnection().get('products').value();
+    res.json(products);
+};
+
+productsCtrl.getProduct = (req, res) => {
+    const product = getConnection().get('products')
+    .find({id:  req.params.id}).value();
+
+    res.json(product);
 };
 
 productsCtrl.createProducts = (req, res) => {
-    const { author, title, description, price } = req.body;
-    products.push({
-        id: products.length,
-        author,
-        title,
-        description,
-        price
-    });
-    res.json(req.body);
-}
-
-productsCtrl.getProduct = (req, res) => {
-    const { id } = req.params;
-    for(i in products){
-        if(products[i].id == id){
-            res.json(products[i]);
-        }
+    const newProduct = {
+        id: v4(),
+        name: req.body.author,
+        title: req.body.title,
+        description: req.body.description,
+        price: req.body.price
     }
-}
+    getConnection().get('products').push(newProduct).write();
+    res.json(newProduct);
+};
 
-productsCtrl.updateProducts = (req, res) => {
-    const { id } = req.params;
-    const { author, title, description, price } = req.body;
-    for(i in products){
-        if(products[i].id == id){
-            products[i].author = author;
-            products[i].title = title;
-            products[i].description = description;
-            products[i].price = price;
-        }
-    }
-    res.json('update product')
-}
+productsCtrl.updateProducts = async (req, res) => {
+    const product = await getConnection.get('products')
+    .find({id: req.params.id})
+    .assign(req.body)
+    .write();
+    res.json(product);
+};
 
 productsCtrl.deleteProducts = (req, res) => {
-    const { id } = req.params;
-    for(i in products){
-        if(products[i].id == id){
-            products.splice(i, 1);
-        }
-    }
-    res.json('delete product')
-}
+    const result = getConnection().get('products').remove({id: req.params.id})
+    .write();
+    res.json(result);
+};
 
 module.exports = productsCtrl;
+
