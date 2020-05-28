@@ -1,6 +1,6 @@
 import React from 'react';
 
-const FormSignup = ({validation}) => {
+const FormSignup = ({validation, setProfile}) => {
 
     const signup = async e => {
         e.preventDefault();

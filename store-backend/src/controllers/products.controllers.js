@@ -41,5 +41,10 @@ productsCtrl.deleteProducts = (req, res) => {
     res.json(result);
 };
 
+productsCtrl.uploadImage = (req, res) => {
+    console.log(req.file);
+    res.json('recibido');
+}
+
 module.exports = productsCtrl;
 
