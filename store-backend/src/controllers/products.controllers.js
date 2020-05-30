@@ -1,4 +1,6 @@
 const productsCtrl = {}
+const path = require('path');
+const fs = require('fs-extra');
 
 const { v4 } = require('uuid');
 const { getConnection } = require('../database');
@@ -21,7 +23,8 @@ productsCtrl.createProducts = (req, res) => {
         name: req.body.author,
         title: req.body.title,
         description: req.body.description,
-        price: req.body.price
+        price: req.body.price,
+        imgPath: req.file.path
     }
     getConnection().get('products').push(newProduct).write();
     res.json(newProduct);
@@ -32,19 +35,18 @@ productsCtrl.updateProducts = async (req, res) => {
     .find({id: req.params.id})
     .assign(req.body)
     .write();
-    res.json(product);
+    res.json('save');
 };
 
 productsCtrl.deleteProducts = (req, res) => {
-    const result = getConnection().get('products').remove({id: req.params.id})
+    const result = getConnection().get('products')
+    .remove({id: req.params.id})
     .write();
+    if(result){
+        fs.unlink(path.resolve(result.imgPath));
+    }
     res.json(result);
 };
-
-productsCtrl.uploadImage = (req, res) => {
-    console.log(req.file);
-    res.json('recibido');
-}
 
 module.exports = productsCtrl;
 

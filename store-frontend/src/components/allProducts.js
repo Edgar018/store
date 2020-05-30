@@ -7,6 +7,13 @@ const AllProducts = ({ data }) => {
       {data.map((product) => (
         <div className="col-md-4 p-2" key={product.id}>
           <div className="card">
+            <div className="card-header">
+              <img
+                src={'http://localhost:4000/' + product.imgPath}
+                className="img-card-top w-100"
+                alt="product"
+              />
+            </div>
             <div className="card-body">
               <h1>{product.title}</h1>
               <p>{product.name}</p>

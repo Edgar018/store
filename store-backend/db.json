@@ -1,32 +1,12 @@
 {
   "products": [
     {
-      "id": "280ec2cb-edbb-474a-9d4a-17e6cc0f4a09",
-      "name": "sadas",
-      "title": "dasdsa",
-      "description": "dasda",
-      "price": "1754$"
-    },
-    {
-      "id": "1f78c9b2-0421-4b5a-bbd3-e29608f7ab71",
+      "id": "9e97f2e0-f7b0-4175-8298-515fccb77eb7",
       "name": "Edgar",
-      "title": "GPU",
-      "description": "Lorem ipsum dolor sit amet consectetur adipiscing, elit senectus aliquet eleifend duis iaculis morbi, ornare tortor pulvinar maecenas ultrices. Semper libero mattis cras ornare penatibus montes, magna dictum consequat rutrum eu accumsan tortor, platea vehicula feugiat maecenas non. In vestibulum sollicitudin vivamus a malesuada mi inceptos, tristique nullam ultrices gravida semper.  Ultricies nisl rutrum senectus porta lacinia sed hac sociosqu ridiculus penatibus elementum blandit quisque, viverra primis facilisi cum habitasse lectus erat scelerisque cubilia odio dictum. Laoreet etiam dui montes auctor sociis dapibus mus elementum, praesent vestibulum ac iaculis rutrum tortor hac, porttitor aliquet molestie commodo tempus lacinia torquent. Luctus semper magna malesuada sollicitudin curae integer sem varius, faucibus iaculis ridiculus accumsan aptent montes ullamcorper fusce, fringilla nascetur nullam nulla himenaeos vehicula penatibus.",
-      "price": "40$"
-    },
-    {
-      "id": "8bd8298f-43a7-4e3f-a53c-4eb214bc2a40",
-      "name": "Edgar",
-      "title": "PC",
-      "description": "dasdasdasdasdada",
-      "price": "1754$"
-    },
-    {
-      "id": "7d05f2e8-5870-4371-bc27-c3c5da93f8c1",
-      "name": "dsad",
-      "title": "task one",
-      "description": "fdsfsd",
-      "price": "17$"
+      "title": "editor de codigo",
+      "description": "te ayuda a tener mas ordenar al escribir un programa",
+      "price": "17$",
+      "imgPath": "uploads\\9ffe7895-7906-4abd-ae13-45407e58b84d.svg"
     }
   ],
   "users": [
@@ -34,12 +14,6 @@
       "id": "0",
       "email": "Edgar@hotmail.com",
       "username": "Edgar",
-      "password": "password"
-    },
-    {
-      "id": "d179f69f-6a08-49e6-ad8a-27361ef228ac",
-      "username": "Edgar",
-      "email": "Edgar12@hotmail.com",
       "password": "password"
     }
   ]

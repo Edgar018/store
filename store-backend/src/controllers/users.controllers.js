@@ -4,7 +4,7 @@ const { getConnection } = require('../database');
 const jwt = require('jsonwebtoken');
 
 userCtrl.signup = (req, res) => {
-
+    console.log(req.body);
     const email = getConnection().get('users').find({email: req.body.email})
     .value();
     if(email === undefined){
@@ -23,6 +23,7 @@ userCtrl.signup = (req, res) => {
 }
 
 userCtrl.signin = (req, res) => {
+    console.log(req.body);
 
     const email = getConnection().get('users')
     .find({email: req.body.email});
@@ -32,6 +33,10 @@ userCtrl.signin = (req, res) => {
 
     const password = getConnection().get('users')
     .find({password: req.body.password});
+
+    console.log(email);
+    console.log(username);
+    console.log(password);
 
     if(
         email === undefined || 
@@ -44,6 +49,7 @@ userCtrl.signin = (req, res) => {
     //SEND TOKEN
     let user = getConnection().get('users')
     .find({email: req.body.email}).value();
+    console.log(user);
     const token = jwt.sign({id: user.id},'secretkey');
     return res.status(200).json({token});
    

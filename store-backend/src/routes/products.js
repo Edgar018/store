@@ -5,19 +5,15 @@ const {
     createProducts, 
     updateProducts, 
     deleteProducts,
-    uploadImage
 } 
 = require('../controllers/products.controllers');
+const multer = require('../libs/multer');
 
 const router = Router()
-    .post(uploadImage);
 
 router.route('/')
     .get(getProducts)
-    .post(createProducts)
-
-router.route('/images')
-    .post();
+    .post(multer.single('image'), createProducts)
 
 
 router.route('/:id')

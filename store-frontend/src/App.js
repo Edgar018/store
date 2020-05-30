@@ -1,5 +1,8 @@
 import React, { Fragment, useState, useEffect } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route } 
+from "react-router-dom";
+import Axios from 'axios';
+
 //Components
 import Navigation from "./components/navigation";
 import Banner from "./components/banner";
@@ -18,9 +21,9 @@ const App = () => {
   }, []);
 
   const showProducts = async () => {
-    let res = await fetch("http://localhost:4000/api/products");
-    let products = await res.json();
-    setData(products);
+    let URL = 'http://localhost:4000/api/products'
+    await Axios.get(URL)
+    .then(res => setData(res.data));
   };
 
   const validation = () => {
