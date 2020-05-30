@@ -7,6 +7,22 @@
       "description": "te ayuda a tener mas ordenar al escribir un programa",
       "price": "17$",
       "imgPath": "uploads\\9ffe7895-7906-4abd-ae13-45407e58b84d.svg"
+    },
+    {
+      "id": "219dee00-a5f4-4c61-be12-884c1defa418",
+      "name": "dsada",
+      "title": "dasda",
+      "description": "dasdas",
+      "price": "dsadsa",
+      "imgPath": "uploads\\20bdd95e-f9fb-4d8d-a317-c6a764500c1b.jpg"
+    },
+    {
+      "id": "dadfb203-f967-4454-8f2f-592e39da7156",
+      "name": "test",
+      "title": "title test",
+      "description": "description test",
+      "price": "18",
+      "imgPath": "uploads\\dc36ea1a-ec13-46b2-bb4e-d1c448222329.svg"
     }
   ],
   "users": [
@@ -14,6 +30,12 @@
       "id": "0",
       "email": "Edgar@hotmail.com",
       "username": "Edgar",
+      "password": "password"
+    },
+    {
+      "id": "5a6711d6-931a-4d99-8591-89f331449d81",
+      "username": "Edgar",
+      "email": "Edgar12@hotmail.com",
       "password": "password"
     }
   ]

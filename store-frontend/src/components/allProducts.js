@@ -3,22 +3,19 @@ import { Link } from "react-router-dom";
 
 const AllProducts = ({ data }) => {
   return (
-    <div className="row">
+    <div className="row mt-5">
       {data.map((product) => (
-        <div className="col-md-4 p-2" key={product.id}>
-          <div className="card">
+        <div className="col-md-3 m-auto" key={product.id}>
+          <div className="card text-center">
             <div className="card-header">
               <img
-                src={'http://localhost:4000/' + product.imgPath}
+                src={`http://localhost:4000/${product.imgPath}`}
                 className="img-card-top w-100"
                 alt="product"
               />
             </div>
             <div className="card-body">
-              <h1>{product.title}</h1>
-              <p>{product.name}</p>
-              <p>{product.description}</p>
-              <p>{product.price}</p>
+              <h2>{product.title}</h2>
             </div>
             <div className="card-footer">
               <Link

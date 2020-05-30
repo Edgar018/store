@@ -1,10 +1,11 @@
-import React from "react";
+import React, {Fragment} from "react";
 import { Redirect } from "react-router-dom";
 
 const Profile = ({ validation }) => {
-    
-  if (validation()) {
-    return (
+  return (
+  <Fragment>
+    {
+  validation()?
       <div className="container mt-5">
         <div className="row">
           <div className="col-md-4">
@@ -31,9 +32,11 @@ const Profile = ({ validation }) => {
           </div>
         </div>
       </div>
-    );
+  :
+  <Redirect to="/signup" />
   }
-  return <Redirect to="/signup" />;
+</Fragment>
+  )
 };
 
 export default Profile;

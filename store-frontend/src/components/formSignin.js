@@ -8,7 +8,12 @@ const FormSignin = ({ validation, setProfile }) => {
     let data = new FormData(form);
     const URL = 'http://localhost:4000/api/users/signin';
 
-    Axios.post(URL, data).then((res) => {
+    await Axios.post(URL, {
+      username: data.get('username'),
+      email: data.get('email'),
+      password: data.get('password')
+    })
+    .then((res) => {
       console.log(res);
       localStorage.setItem("token", res.data.token);
 

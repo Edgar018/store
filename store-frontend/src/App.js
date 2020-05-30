@@ -46,7 +46,9 @@ const App = () => {
             return (
               <Fragment>
                 <Banner />
-                <AllProducts data={data} />
+                <div className="container">
+                  <AllProducts data={data} />
+                </div>
               </Fragment>
             );
           }}

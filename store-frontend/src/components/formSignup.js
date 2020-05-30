@@ -9,7 +9,7 @@ const FormSignup = ({ validation, setProfile }) => {
 
     const URL = 'http://localhost:4000/api/users/signup';
 
-    Axios.post(URL, {
+    await Axios.post(URL, {
         email: data.get('email'),
         username: data.get('username'),
         password: data.get('password')
