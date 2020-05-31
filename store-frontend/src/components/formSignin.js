@@ -14,11 +14,12 @@ const FormSignin = ({ validation, setProfile }) => {
       password: data.get('password')
     })
     .then((res) => {
-      console.log(res);
-      localStorage.setItem("token", res.data.token);
+      console.log(res.data.userId);
+      localStorage.setItem('token', res.data.token);
 
       if (validation()) {
-        localStorage.setItem("name", data.get("username"));
+        localStorage.setItem('name', data.get("username"));
+        localStorage.setItem('id', res.data.userId)
         window.location.href = "/profile";
       }
     });

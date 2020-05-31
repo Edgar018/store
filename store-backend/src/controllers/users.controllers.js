@@ -16,8 +16,11 @@ userCtrl.signup = (req, res) => {
         }
         getConnection().get('users').push(newUser).write();
         //SEND TOKEN
+
+        let userId = newUser.id
+
         const token = jwt.sign({id: newUser.id}, 'secretkey');
-        return res.status(200).json({token});
+        return res.status(200).json({token, userId});
     }
     return res.status(401).json('este email ya existe');
 }
@@ -50,8 +53,11 @@ userCtrl.signin = (req, res) => {
     let user = getConnection().get('users')
     .find({email: req.body.email}).value();
     console.log(user);
+
+    let userId = user.id
+
     const token = jwt.sign({id: user.id},'secretkey');
-    return res.status(200).json({token});
+    return res.status(200).json({token, userId});
    
 }
 

@@ -2,6 +2,7 @@ const { Router } = require('express');
 const { 
     getProducts, 
     getProduct, 
+    getProductsById,
     createProducts, 
     updateProducts, 
     deleteProducts,
@@ -10,6 +11,9 @@ const {
 const multer = require('../libs/multer');
 
 const router = Router()
+
+router.route('/productsUser/:id')
+    .get(getProductsById)
 
 router.route('/')
     .get(getProducts)

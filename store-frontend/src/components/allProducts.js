@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const AllProducts = ({ data }) => {
   return (
     <div className="row mt-5">
-      {data.map((product) => (
+      {data.map(product => (
         <div className="col-md-3 m-auto" key={product.id}>
           <div className="card text-center">
             <div className="card-header">
