@@ -34,6 +34,7 @@ productsCtrl.getProductsById = async (req, res) => {
 productsCtrl.createProducts = async (req, res) => {
   const newProduct = {
     id: v4(),
+    userId: req.body.userId,
     name: req.body.author,
     title: req.body.title,
     description: req.body.description,

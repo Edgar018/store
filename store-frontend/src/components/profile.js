@@ -5,12 +5,12 @@ import Axios from "axios";
 const Profile = ({ validation }) => {
   const [product, setProduct] = useState(false);
 
-  const getProductsOfUser = () => {
-    Axios.get(
+  const getProductsOfUser = async () => {
+    await Axios.get(
       "http://localhost:4000/api/products/productsUser/" +
         localStorage.getItem("id")
     ).then((res) => {
-      if(res.data.length !== 0){
+      if (res.data.length !== 0) {
         setProduct(res.data);
         console.log(res.data);
       }
@@ -49,30 +49,32 @@ const Profile = ({ validation }) => {
               </div>
             </div>
           </div>
-          <div className="row">
+          <div className="row text-center">
             <div className="col-md-12">
-              <div className="card mt-5 text-center">
-                <div className="card-header">
-                  <h3>Your products</h3>
-                </div>
-                {product ? (
-                  product.map(product => (
-                    <div className="mt-5" key={product.id}>
-                      <img
-                        src={`http://localhost:4000/${product.imgPath}`}
-                        className="img-card-top w-25"
-                        alt="product"
-                      />
-                      <h3>{product.title}</h3>
-                    </div>
-                  ))
-                ) : (
-                  <div className="m-5">
-                    <h3>you have no products yet</h3>
-                  </div>
-                )}
+              <div className="card-header mt-5">
+                <h3>Your products</h3>
               </div>
             </div>
+            {product ? (
+              product.map((product) => (
+                <div key={product.id} className="col-md-4 mt-5 ">
+                  <img
+                    src={`http://localhost:4000/${product.imgPath}`}
+                    style={{ width: "200px", height: "200px" }}
+                    alt="product"
+                  />
+                  <h3>{product.title}</h3>
+                </div>
+              ))
+            ) : (
+              <div className="col-md-12 text-center">
+                <div className="card">
+                  <div className="card-body">
+                    <h3>you have no products yet</h3>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       ) : (

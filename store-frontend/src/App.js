@@ -16,15 +16,16 @@ import Product from "./components/product";
 const App = () => {
   const [data, setData] = useState([]);
 
-  useEffect(() => {
-    showProducts();
-  }, []);
-
   const showProducts = async () => {
     let URL = 'http://localhost:4000/api/products'
     await Axios.get(URL)
     .then(res => setData(res.data));
   };
+
+  useEffect(() => {
+    showProducts();
+  }, []);
+
 
   const validation = () => {
     if (

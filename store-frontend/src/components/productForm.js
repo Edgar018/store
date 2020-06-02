@@ -12,7 +12,8 @@ const ProductForm = ({ validation }) => {
     let data = new FormData(form);
     let URL = "http://localhost:4000/api/products";
 
-    data.append("image", images);
+    data.append('userId', localStorage.getItem('id'));
+    data.append('image', images);
 
     await Axios.post(URL, data).then((res) => {
       window.location.href = "/";

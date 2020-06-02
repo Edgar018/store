@@ -1,51 +1,54 @@
 {
   "products": [
     {
-      "id": "9e97f2e0-f7b0-4175-8298-515fccb77eb7",
-      "userId": "0",
-      "name": "Edgar",
-      "title": "editor de codigo",
-      "description": "te ayuda a tener mas ordenar al escribir un programa",
-      "price": "17$",
-      "imgPath": "uploads\\9ffe7895-7906-4abd-ae13-45407e58b84d.svg"
-    },
-    {
-      "id": "219dee00-a5f4-4c61-be12-884c1defa418",
-      "userId": "5a6711d6-931a-4d99-8591-89f331449d81",
-      "name": "dsada",
-      "title": "dasda",
-      "description": "dasdas",
-      "price": "dsadsa",
-      "imgPath": "uploads\\20bdd95e-f9fb-4d8d-a317-c6a764500c1b.jpg"
-    },
-    {
-      "id": "dadfb203-f967-4454-8f2f-592e39da7156",
-      "userId": "5a6711d6-931a-4d99-8591-89f331449d81",
+      "id": "30af3a6a-8e3b-42a8-b1a5-e08f05945046",
+      "userId": "302d6329-b37e-40c2-8773-68304bc4ef68",
       "name": "test",
-      "title": "title test",
-      "description": "description test",
-      "price": "18",
-      "imgPath": "uploads\\dc36ea1a-ec13-46b2-bb4e-d1c448222329.svg"
+      "title": "test",
+      "description": "test",
+      "price": "1",
+      "imgPath": "uploads\\ffe24bfa-87bb-4ac6-bd1f-2067003c8a46.jpg"
+    },
+    {
+      "id": "db1f4c99-9e2b-4b06-9780-595dd86453ae",
+      "userId": "302d6329-b37e-40c2-8773-68304bc4ef68",
+      "name": "test2",
+      "title": "test2",
+      "description": "test2",
+      "price": "17",
+      "imgPath": "uploads\\a48e1ae9-a6cc-48a4-8cf3-f28da4aeb094.svg"
+    },
+    {
+      "id": "e5172588-16e6-46d4-be33-8b29811fe26f",
+      "userId": "302d6329-b37e-40c2-8773-68304bc4ef68",
+      "name": "test",
+      "title": "test",
+      "description": "test",
+      "price": "17",
+      "imgPath": "uploads\\59eee6b0-ccf2-493b-b681-d763deb4c2bd.svg"
+    },
+    {
+      "id": "a254a7ff-3085-471c-9be8-260880f4daaa",
+      "userId": "b289c396-3942-418d-9d75-7e68b7266ae4",
+      "name": "test",
+      "title": "test",
+      "description": "test",
+      "price": "17",
+      "imgPath": "uploads\\2f2d3452-1c6b-4855-9b17-8477c6d33f96.svg"
     }
   ],
   "users": [
     {
-      "id": "0",
-      "email": "Edgar@hotmail.com",
+      "id": "b289c396-3942-418d-9d75-7e68b7266ae4",
       "username": "Edgar",
-      "password": "password"
+      "email": "Edgar1233@hotmail.com",
+      "password": "$2b$10$f49bVBnAKQPe9fWPbmB1QOcPYbXsQm32oGcj6pZSZ/arbgHnwTpy6"
     },
     {
-      "id": "5a6711d6-931a-4d99-8591-89f331449d81",
+      "id": "302d6329-b37e-40c2-8773-68304bc4ef68",
       "username": "Edgar",
       "email": "Edgar12@hotmail.com",
-      "password": "password"
-    },
-    {
-      "id": "56f6ccf4-0259-440c-bf16-06e710515773",
-      "username": "Edgar",
-      "email": "Edgar123@hotmail.com",
-      "password": "password"
+      "password": "$2b$10$WOY3aIShUc9tC4xcVC18ZOxbdnUBwuf4Kih2nfbyU/qcgesJCmsBi"
     }
   ]
 }
