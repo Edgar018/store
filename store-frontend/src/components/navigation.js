@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Navigation = ({ validation }) => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark p-3">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light p-3 shadow-sm bg-white rounded">
       <div className="container">
         <Link to="/" className="navbar-brand">
           StoreApp

@@ -25,7 +25,7 @@ const Product = () => {
             <img
               src=
               {`http://localhost:4000/${productData.imgPath}`}
-              className="img-fluit"
+              className="img-card-top w-100 p-5"
               alt="product"
             />
             :

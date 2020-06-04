@@ -42,12 +42,12 @@ const ProductForm = ({ validation }) => {
     return (
       <div className="container">
         <div className="row">
-          <div className="col-md-6">
+          <div className="col-md-7">
             <div className="card mt-5">
               <div className="card-body">
                 <div className="text-center">
                   <img
-                    src="../../images/upload.png"
+                    src="../../images/upload.svg"
                     id="imgPreview"
                     style={{ width: "350px", height: "250px" }}
                     alt="preview"
@@ -65,7 +65,7 @@ const ProductForm = ({ validation }) => {
               </div>
             </div>
           </div>
-          <div className="col-md-4">
+          <div className="col-md-5">
             <div className="card card-body mt-5">
               <form id="form">
                 <div className="form-group">

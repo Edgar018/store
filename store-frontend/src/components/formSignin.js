@@ -25,7 +25,7 @@ const FormSignin = ({ validation, setProfile }) => {
     });
   };
   return (
-    <div className="container col-5">
+    <div className="container col-4">
       <div className="card card-body mt-5">
         <form id="form" onSubmit={signin}>
           <div className="form-group">

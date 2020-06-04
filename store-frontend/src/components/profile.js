@@ -27,11 +27,14 @@ const Profile = ({ validation }) => {
         <div className="container mt-5">
           <div className="row">
             <div className="col-md-4">
-              <div className="card p-2 text-center">
-                <img
-                  src="./../images/images-default-profile.png"
-                  alt="default-profile"
-                />
+              <div className="card text-center">
+                <div className="card-header">
+                  <img
+                   src="./../images/images-default-profile.svg"
+                   alt="default-profile"
+                   style={{"height": "300px", "width": "300px"}}
+                  />
+                </div>
                 <h2>{localStorage.getItem("name")}</h2>
               </div>
             </div>
