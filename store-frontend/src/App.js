@@ -88,7 +88,7 @@ const App = () => {
           exact
           path={"/product/:id"}
           render={() => {
-            return <Product setPrice={setPrice}/>;
+            return <Product setPrice={setPrice} validation={validation}/>;
           }}
         />
         <Route

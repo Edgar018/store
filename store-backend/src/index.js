@@ -2,7 +2,7 @@ const app = require('./app');
 const { createConnection, getConnection } = 
 require('./database');
 
-const { messagesChat, messageDelete, editMessage } =
+const { messagesChat, messageDelete, editMessage, getMessageAll } =
 require('./controllers/chat.controllers');
 
 const http = require('http')
@@ -14,17 +14,20 @@ const io = require('socket.io')(server);
 io.on('connection', socket => {
     socket.on('message',  async ({ name, message, pageID, userID }) => {
     const messageID =  await messagesChat(userID, pageID, message, name);
-      io.emit('message', { name, message, messageID, userID });
+      const chat = await getMessageAll(pageID);
+      io.emit('message',  chat);
     });
 
-    socket.on('edit', ({ messageID, message }) => {
-      io.emit('edit', { messageID, message })
+    socket.on('edit', async ({ messageID, message, pageID }) => {
       editMessage(messageID, message);
+      const chat = await getMessageAll(pageID);
+      io.emit('edit', chat)
     });
 
-    socket.on('delete', ({ id }) => {
-      io.emit('delete', {res: 'delete message', id: id});
-      messageDelete(id);
+    socket.on('delete', async ({ messageID, pageID }) => {
+      await messageDelete(messageID);
+      const chat = await getMessageAll(pageID);
+      io.emit('delete', chat);
     });
     
   });   

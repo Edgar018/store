@@ -76,6 +76,12 @@
       "username": "Anthony",
       "email": "anthony@hotmail.com",
       "password": "$2b$10$A6zrUBY2RDFChy7QYDTu2e17j/6aw1uTKOa58aV043nAUe76oDzFS"
+    },
+    {
+      "id": "41630257-555f-47c9-a2c0-72a9141711ee",
+      "username": "Paola",
+      "email": "paola123333@gmail.com",
+      "password": "$2b$10$.rGmnLtGE/ME3Au6FieoYOPWKZh7EsUctpN4HZKYAfL0y1pfZFR.O"
     }
   ],
   "chats": [

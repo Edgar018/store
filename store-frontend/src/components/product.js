@@ -5,7 +5,7 @@ import { useParams } from 'react-router';
 import Chat from './chat';
 import { Link } from 'react-router-dom';
 
-const Product = ({ setPrice }) => {
+const Product = ({ setPrice, validation }) => {
   const [productData, setProductData] = useState([]);
 
   let  { id }  = useParams();
@@ -61,7 +61,7 @@ const Product = ({ setPrice }) => {
           </div>
         </div>
       </div>
-      <Chat id={id}/>
+      <Chat pageID={id} validation={validation}/>
     </div>
   );
 };

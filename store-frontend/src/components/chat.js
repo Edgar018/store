@@ -5,7 +5,7 @@ import Axios from "axios";
 const URL = "http://localhost:4000/api/chat";
 let userID = localStorage.getItem("id");
 
-const Chat = ({ id }) => {
+const Chat = ({ pageID, validation }) => {
 
   const [messageChat, setMessageChat] = useState({
     message: "",
@@ -19,39 +19,29 @@ const Chat = ({ id }) => {
   const getMessages = useCallback(() => {
     const fetchData = async () => {
       await Axios.post(URL, {
-        id: id,
+        id: pageID,
       }).then((res) => {
         setChat(res.data);
       });
     }
     fetchData();
-  }, [id]);
+  }, [pageID]);
 
   useEffect(() => getMessages(), [getMessages]);
 
   useEffect(() => {
-
-    socket.on('message', ({ name, message, messageID, userID }) => {
-      setChat([...chat, { name, message, messageID, userID }]);
+    socket.on('message', (chat) => {
+      setChat(chat);
     });
 
-    socket.on('delete', ({id}) => {
-      setChat(chat.map(m => (m.messageID === id 
-        ?{...m, message: 'This message was deleted'} 
-        : m)));
+    socket.on('delete', (chat) => {
+      setChat(chat);
     });
     
-    socket.on('edit', ({messageID, message}) => {
-      setChat(
-        chat.map(m => messageID === m.messageID
-        ?{...m, message: message}
-        : m
-        )
-      )
+    socket.on('edit', (chat) => {
+      setChat(chat);
     });
-
-   
-  }, [chat]);
+  }, []);
 
 
   const editMessage = (id) => {
@@ -70,8 +60,8 @@ const Chat = ({ id }) => {
   };
 
 
-  const deleteMessage = async (id) => {
-    socket.emit('delete',{id});
+  const deleteMessage = async (messageID) => {
+    socket.emit('delete',{messageID, pageID});
 
   };
 
@@ -82,9 +72,9 @@ const Chat = ({ id }) => {
   const onMessageSubmit = (e) => {
     e.preventDefault();
     if (!messageChat.editing) {
-      if (localStorage.getItem("name") !== null) {
+      if (validation()) {
         const { name, message } = messageChat;
-        socket.emit('message', { name, message, pageID: id, userID });
+        socket.emit('message', { name, message, pageID, userID });
       } else {
         console.log("error");
       }
@@ -92,6 +82,7 @@ const Chat = ({ id }) => {
       socket.emit('edit', {
         messageID: messageChat.messageID,
         message: messageChat.message,
+        pageID
       });
     }
     setMessageChat({

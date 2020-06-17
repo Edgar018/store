@@ -10,6 +10,14 @@ chatCtrl.getChat = async (req, res) => {
     res.json(chat);
 }
 
+chatCtrl.getMessageAll = async (pageID) => {
+    const chat = await getConnection()
+    .get('chats')
+    .filter({pageID: pageID})
+    .value();
+    return chat
+}
+
 chatCtrl.messagesChat = async (userID, id, message, name) => {
     const newMessage = {
         messageID: v4(),
