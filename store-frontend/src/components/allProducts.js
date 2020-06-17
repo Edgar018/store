@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 
 const AllProducts = ({ data }) => {
   return (
-    <div className="row mt-5">
+    <div className="row">
       {data.map(product => (
         <div 
          className="col-md-3" key={product.id}>
           <div 
-           className="card text-center">
+           className="card text-center  mt-5">
             <div 
              className="card-header">
               <img

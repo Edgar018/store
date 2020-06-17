@@ -35,20 +35,30 @@
       "description": "test",
       "price": "17",
       "imgPath": "uploads\\2f2d3452-1c6b-4855-9b17-8477c6d33f96.svg"
+    },
+    {
+      "id": "70b2f148-b462-4cfd-8b42-3b2ca8e5431d",
+      "userId": "302d6329-b37e-40c2-8773-68304bc4ef68",
+      "name": "test",
+      "title": "test",
+      "description": "test",
+      "price": "15",
+      "imgPath": "uploads\\1e3abae8-a7f6-41a3-8ae9-2cf959b31487.svg"
     }
   ],
   "users": [
     {
-      "id": "b289c396-3942-418d-9d75-7e68b7266ae4",
+      "id": "1fda4280-efd5-4f0b-8410-faec80b2cdcc",
       "username": "Edgar",
-      "email": "Edgar1233@hotmail.com",
-      "password": "$2b$10$f49bVBnAKQPe9fWPbmB1QOcPYbXsQm32oGcj6pZSZ/arbgHnwTpy6"
+      "email": "edgar@gmail.com",
+      "password": "$2b$10$gtKgXPJHO9XLm5.vWevNZOnYWNOYMy4S/32cMlWWm2VuCeSu1IF42"
     },
     {
-      "id": "302d6329-b37e-40c2-8773-68304bc4ef68",
-      "username": "Edgar",
-      "email": "Edgar12@hotmail.com",
-      "password": "$2b$10$WOY3aIShUc9tC4xcVC18ZOxbdnUBwuf4Kih2nfbyU/qcgesJCmsBi"
+      "id": "4722a677-b536-4e97-8c24-c18fe1460d66",
+      "username": "Paola",
+      "email": "paola@gmail.com",
+      "password": "$2b$10$td5wrNkJI8P8iz/LVLXZwevCN0on9CUcdrwTEI9p1H1HNZQWGC2ti"
     }
-  ]
+  ],
+  "chats": []
 }

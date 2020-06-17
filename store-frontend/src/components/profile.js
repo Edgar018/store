@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect } from "react";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import Axios from "axios";
 
 const Profile = ({ validation }) => {
@@ -30,9 +30,9 @@ const Profile = ({ validation }) => {
               <div className="card text-center">
                 <div className="card-header">
                   <img
-                   src="./../images/images-default-profile.svg"
-                   alt="default-profile"
-                   style={{"height": "300px", "width": "300px"}}
+                    src="./../images/images-default-profile.svg"
+                    alt="default-profile"
+                    style={{ height: "300px", width: "300px" }}
                   />
                 </div>
                 <h2>{localStorage.getItem("name")}</h2>
@@ -60,13 +60,25 @@ const Profile = ({ validation }) => {
             </div>
             {product ? (
               product.map((product) => (
-                <div key={product.id} className="col-md-4 mt-5 ">
-                  <img
-                    src={`http://localhost:4000/${product.imgPath}`}
-                    style={{ width: "200px", height: "200px" }}
-                    alt="product"
-                  />
-                  <h3>{product.title}</h3>
+                <div key={product.id} className="col-md-4 mt-5">
+                  <div className="card">
+                    <div className="card-header">
+                      <img
+                        src={`http://localhost:4000/${product.imgPath}`}
+                        style={{ width: "200px", height: "200px" }}
+                        alt="product"
+                      />
+                    </div>
+                    <h3>{product.title}</h3>
+                    <div className="card-footer">
+                      <Link
+                        to={"/product/" + product.id}
+                        className="btn btn-info btn-block"
+                      >
+                        View Product
+                      </Link>
+                    </div>
+                  </div>
                 </div>
               ))
             ) : (

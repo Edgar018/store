@@ -15,6 +15,7 @@ app.use(express.json());
 
 
 //routes
+app.use('/api/chat', require('./routes/chats'));
 app.use('/api/products', require('./routes/products'));
 app.use('/api/users', require('./routes/users'));
 

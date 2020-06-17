@@ -12,7 +12,6 @@ productsCtrl.getProducts = async (req, res) => {
 };
 
 productsCtrl.getProduct = async (req, res) => {
-
   const product = await getConnection()
   .get("products")
   .find({id: req.params.id})

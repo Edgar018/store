@@ -1,18 +1,22 @@
-import React, { useState, useEffect } from "react";
-import Axios from "axios";
-import { useParams } from "react-router";
+import React, { useState, useEffect } from 'react';
+import Axios from 'axios';
+import { useParams } from 'react-router';
+import Chat from './chat';
 
 const Product = () => {
   const [productData, setProductData] = useState([]);
 
   let  { id }  = useParams();
 
-  const getProductData = () => {
-    let URL = 'http://localhost:4000/api/products/';
-    Axios.get(URL + id).then((res) => setProductData(res.data));
-  };
+  useEffect(() => {
 
-  useEffect(getProductData, []);
+    const getProductData = () => {
+      const URL = 'http://localhost:4000/api/products/';
+      Axios.get(URL + id).then((res) => setProductData(res.data));
+    };
+    
+    getProductData();
+  }, [id]);
 
   return (
     <div className="container">
@@ -49,6 +53,7 @@ const Product = () => {
           </div>
         </div>
       </div>
+      <Chat id={id}/>
     </div>
   );
 };
