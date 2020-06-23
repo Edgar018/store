@@ -12,9 +12,11 @@ import FormSignup from "./components/formSignup";
 import FormSignin from "./components/formSignin";
 import Profile from "./components/profile";
 import Product from "./components/product";
+import FinalizedPayment from './components/finalizedPayment';
 
 const App = () => {
   const [data, setData] = useState([]);
+  const [price, setPrice] = useState('');
 
   const showProducts = async () => {
     let URL = 'http://localhost:4000/api/products'
@@ -86,7 +88,16 @@ const App = () => {
           exact
           path={"/product/:id"}
           render={() => {
-            return <Product />;
+            return <Product setPrice={setPrice}/>;
+          }}
+        />
+        <Route
+          exact
+          path={"/payment"}
+          render={() => {
+            return <FinalizedPayment price={
+              price
+            }/>;
           }}
         />
       </Router>

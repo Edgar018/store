@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 import { useParams } from 'react-router';
+//Component
 import Chat from './chat';
+import { Link } from 'react-router-dom';
 
-const Product = () => {
+const Product = ({ setPrice }) => {
   const [productData, setProductData] = useState([]);
 
   let  { id }  = useParams();
@@ -48,7 +50,13 @@ const Product = () => {
               <strong>Description</strong>
               <p>{productData.description}</p>
               <strong>Price</strong>
-              <p>{productData.price}</p>
+              <p>${productData.price}USD</p>
+              <Link to="/payment" 
+                onClick={() => 
+                setPrice(productData.price)} 
+                className="btn btn-primary btn-block">
+                Buy
+              </Link>
             </div>
           </div>
         </div>

@@ -58,7 +58,33 @@
       "username": "Paola",
       "email": "paola@gmail.com",
       "password": "$2b$10$td5wrNkJI8P8iz/LVLXZwevCN0on9CUcdrwTEI9p1H1HNZQWGC2ti"
+    },
+    {
+      "id": "00fd0ce1-ebe6-4b74-b79e-8b01a3e3400c",
+      "username": "Edgar",
+      "email": "edgar@hotmail.com",
+      "password": "$2b$10$m9n9bMNPDEQan6WVVO2dwe2THFZ7acBG3VkQMgytZqd1Vct05BC4e"
+    },
+    {
+      "id": "1638c557-0b93-4abf-aceb-e411687cfa7b",
+      "username": "Paola",
+      "email": "paol@hotmail.com",
+      "password": "$2b$10$wbo5VxUyyyUkBTumiDWoZOrX.IWUoaoC17w6AIBWiVMEi1iJW1/B2"
+    },
+    {
+      "id": "6d01caaa-c5e2-49ce-aad2-0955263e2e06",
+      "username": "Anthony",
+      "email": "anthony@hotmail.com",
+      "password": "$2b$10$A6zrUBY2RDFChy7QYDTu2e17j/6aw1uTKOa58aV043nAUe76oDzFS"
     }
   ],
-  "chats": []
+  "chats": [
+    {
+      "messageID": "80266e12-6bd7-4a9e-a6b3-4bb5303e40dd",
+      "userID": "6d01caaa-c5e2-49ce-aad2-0955263e2e06",
+      "pageID": "db1f4c99-9e2b-4b06-9780-595dd86453ae",
+      "message": "como estan?",
+      "name": "Anthony"
+    }
+  ]
 }
